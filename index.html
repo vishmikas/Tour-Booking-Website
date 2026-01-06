@@ -38,7 +38,164 @@
     </nav>
 
     <div id="main-content" class="hidden">
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1>The Misty Mount Await</h1>
+                <p>Premium Nanu Oya Pickups & Scenic Nuwara Eliya Tours</p>
+                <div class="hero-btns">
+                    <a href="#booking" class="btn-primary">Book Your Trip</a>
+                    <a href="https://wa.me/94764181203" class="btn-whatsapp">Chat Now <i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </section>
 
+        <section id="about" class="container section-padding">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">About Misty Mount Tours</h2>
+                    <p>Based in Nuwara Eliya, we are a local travel agency dedicated to providing reliable and high-quality transport services. From picking you up at <strong>Ambewela ans Nanu Oya Station</strong> to guiding you through the <strong>Tea Estates</strong>, we ensure your journey is comfortable and safe.</p>
+                    <p>Our experienced drivers know every misty corner of the hill country, providing you with more than just a ride—we provide an experience.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="500">0</h3>
+                        <p>Tours Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="100">0</h3>
+                        <p>Reliability %</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="container">
+            <h2 class="section-title text-center">Our Travel Packages</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-train"></i></div>
+                    <h3>Station Pickups</h3>
+                    <p>Reliable pickup and drop-off services for:</p>
+                    <ul>
+                        <li>Nanu Oya Station</li>
+                        <li>Ambewela Station</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-mountain"></i></div>
+                    <h3>Highland Tours</h3>
+                    <p>Explore the best of the hills:</p>
+                    <ul>
+                        <li>Horton Plains (Morning Safari)</li>
+                        <li>Nuwara Eliya City Tour</li>
+                        <li>Bomburu Ella Waterfall</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Tea & Waterfalls</h3>
+                    <p>The "Golden Trail" includes:</p>
+                    <ul>
+                        <li>Damro & Bluefield Tea Factories</li>
+                        <li>Kingswood Tea Factory</li>
+                        <li>Ramboda Waterfall</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-route"></i></div>
+                    <h3>Island Wide</h3>
+                    <p>Travel beyond the mist:</p>
+                    <ul>
+                        <li>Nuwara Eliya to Ella</li>
+                        <li>Airport Hires (BIA)</li>
+                        <li>Custom Island Wide Tours</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="container section-padding">
+            <h2 class="section-title text-center">Traveler Gallery</h2>
+            <div class="gallery-container">
+                <div class="scroll-track" id="gallery-track">
+                    <div class="gallery-item"><img src="images/image001.jpeg" alt=""></div>
+                    <div class="gallery-item"><img src="images/image002.jpeg" alt=""></div>
+                    <div class="gallery-item"><img src="images/image003.jpeg" alt=""></div>
+                    <div class="gallery-item"><img src="images/image004.jpeg" alt=""></div>
+                    <div class="gallery-item"><img src="images/image005.jpeg" alt=""></div>
+                    
+                    <div class="gallery-item"><img src="images/image006.jpeg" alt=""></div>
+                    <div class="gallery-item"><img src="images/image007.jpeg" alt=""></div>
+                    <div class="gallery-item"><img src="images/image008.jpeg" alt=""></div>
+                    <div class="gallery-item"><img src="images/image009.jpeg" alt=""></div>
+                    <div class="gallery-item"><img src="images/image010.jpeg" alt=""></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="section-padding">
+            <div class="booking-container container">
+                <div class="booking-header">
+                    <h2>Instant Reservation</h2>
+                    <p>Submit the form to receive an email confirmation and WhatsApp summary.</p>
+                </div>
+                <form id="booking-form">
+                    <div class="form-row">
+                        <input type="text" id="cust_name" placeholder="Full Name" required>
+                        <input type="tel" id="cust_phone" placeholder="Phone (e.g. +947...)" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" id="cust_email" placeholder="Email Address" required>
+                        <select id="service_type" required>
+                            <option value="" disabled selected>Service Type</option>
+                            <option value="Station Pickup">Ambewela Station Pickup</option>
+                            <option value="Station Pickup">Nanu Oya Station Pickup</option>
+                            <option value="Airport Transfer">Airport Transfer (BIA)</option>
+                            <option value="Local Day Tour">Full Day City Tour</option>
+                            <option value="Horton Plains (Morning Safari)">Horton Plains (Morning Safari)</option>
+                            <option value="Station Pickup">Tea & Waterfalls</option>
+                            <option value="Station Pickup">Custom Island Wide Tours</option>
+                        </select>
+                    </div>
+                    <input type="datetime-local" id="tour_date" required>
+                    <textarea id="tour_details" placeholder="Train/Flight details or Hotel Name"></textarea>
+                    <button type="submit" class="submit-btn">Send Booking Request</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="reviews" class="container section-padding">
+            <h2 class="section-title text-center">Traveler Reviews</h2>
+            <div class="reviews-summary text-center">
+                <p>Average Rating: <span id="avg-rating">0.0</span> <i class="fas fa-star"></i> (<span id="review-count">0</span> reviews)</p>
+            </div>
+            <div class="reviews-layout">
+                <div class="review-form-container">
+                    <form id="review-form">
+                        <input type="text" id="rev_name" placeholder="Your Name" required>
+                        <div class="rating-input">
+                            <span>Rating:</span>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+                                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                            </div>
+                        </div>
+                        <textarea id="rev_comment" placeholder="Share your experience with Misty Mount Tours..." required></textarea>
+                        <button type="submit" class="btn-primary">Submit Review</button>
+                    </form>
+                </div>
+                <div class="review-wall-container">
+                    <div id="review-wall" class="review-grid"></div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>

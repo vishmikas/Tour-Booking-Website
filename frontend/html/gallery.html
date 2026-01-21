@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery & Reviews | Misty Mount Travels</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-section">
+            <a href="index.html" class="logo">🏔️ Misty Mount Travels</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Packages & Booking</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <header class="page-header" style="background-image: url('../images/tea.jpg');">
+        <div class="page-header-content">
+            <h1>Moments & Memories</h1>
+            <p>See the world through the eyes of our happy travelers.</p>
+        </div>
+    </header>
+
+    <section class="gallery-section">
+        <div class="section-title-center">
+            <h2>Our Photo Journal</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="filter-nav">
+            <button class="filter-btn active" onclick="filterGallery('all', this)">All Photos</button>
+            <button class="filter-btn" onclick="filterGallery('station', this)">Station Pickups</button>
+            <button class="filter-btn" onclick="filterGallery('nature', this)">Tea & Nature</button>
+            <button class="filter-btn" onclick="filterGallery('guests', this)">Happy Guests</button>
+        </div>
+
+        <div class="gallery-grid">
+            
+            <div class="gallery-item station">
+                <img src="../images/image001.jpeg" alt="Nanu Oya Train">
+                <div class="gallery-overlay">
+                    <div class="overlay-text">
+                        <h3>Nanu Oya Arrival</h3>
+                        <p>Station Pickup Service</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item nature">
+                <img src="../images/image004.jpeg" alt="Tea Estate">
+                <div class="gallery-overlay">
+                    <div class="overlay-text">
+                        <h3>Emerald Estates</h3>
+                        <p>Damro Tea Factory</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item nature">
+                <img src="../images/damro.jpg" alt="Waterfall">
+                <div class="gallery-overlay">
+                    <div class="overlay-text">
+                        <h3>Ramboda Falls</h3>
+                        <p>Nature Tour</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item guests">
+                <img src="../images/nanuoya.jpg" alt="Happy Guests">
+                <div class="gallery-overlay">
+                    <div class="overlay-text">
+                        <h3>Family Trip</h3>
+                        <p>Horton Plains Safari</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item station">
+                <img src="../images/plains.webp" alt="Train Ride" style="filter: sepia(0.3);">
+                <div class="gallery-overlay">
+                    <div class="overlay-text">
+                        <h3>Scenic Route</h3>
+                        <p>Ella to Nanu Oya</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <div class="reviews-container">
+            
+            <div class="reviews-display">
+                <h2 style="color:white; margin-bottom:2rem;">Traveler Stories</h2>
+                
+                <div class="testimonial-carousel">
+                    <div class="testimonial-slide active">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"The station pickup was a lifesaver! The driver was waiting for us at Nanu Oya with a sign. The van was clean and the drive to our hotel was smooth."</p>
+                        <div class="reviewer">
+                            <div class="avatar">A</div>
+                            <div>
+                                <strong>Alex M.</strong><br>
+                                <small>United Kingdom</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"We booked the Horton Plains safari. The driver picked us up at 5am sharp. He knew exactly where to stop for the best photos. Highly recommended!"</p>
+                        <div class="reviewer">
+                            <div class="avatar">P</div>
+                            <div>
+                                <strong>Priya S.</strong><br>
+                                <small>India</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button onclick="moveSlide(-1)"><i class="fas fa-arrow-left"></i></button>
+                    <button onclick="moveSlide(1)"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="review-form-card">
+                <h3>Rate Your Trip</h3>
+                <p style="margin-bottom:1.5rem; color:#666; font-size:0.9rem;">Tell us about your experience with Misty Mount Travels.</p>
+                
+                <form id="reviewForm" onsubmit="submitReview(event)">
+                    <div class="rating-select">
+                        <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
+                        <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
+                        <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
+                        <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
+                        <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
+                    </div>
+
+                    <input type="text" class="form-input" placeholder="Your Name" required style="margin-bottom:1rem; width:100%; padding:0.8rem; border-radius:8px; border:1px solid #ddd;">
+                    
+                    <textarea class="form-input" rows="4" placeholder="Write your review here..." required style="margin-bottom:1rem; width:100%; padding:0.8rem; border-radius:8px; border:1px solid #ddd;"></textarea>
+                    
+                    <button type="submit" class="cta-button" style="width:100%;">Submit Review</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section"><h3>Misty Mount</h3><p>Safe, Reliable, Local.</p></div>
+            <div class="footer-section"><h3>Contact</h3><p>info@mistymounttravels.lk</p></div>
+        </div>
+        <div class="copyright"><p>© 2026 Misty Mount Travels.</p></div>
+    </footer>
+</body>
+</html>

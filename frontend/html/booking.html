@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip | Misty Mount Travels</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-section">
+            <a href="index.html" class="logo">🏔️ Misty Mount Travels</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html" class="active">Packages & Booking</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <header class="page-header" style="background-image: url('../images/header1.jpg');">
+        <div class="page-header-content">
+            <h1>Select & Book</h1>
+            <p>Choose a package below to view details and reserve your ride.</p>
+        </div>
+    </header>
+
+    <div class="booking-container">
+        
+        <div class="package-list">
+            <h2 class="section-title">Available Packages</h2>
+
+            <div class="pkg-card" id="pkg-station">
+                <div class="pkg-image">
+                    <img src="../images/nanuoya.jpg" alt="Train Station Pickup">
+                    <span class="pkg-tag">Most Popular</span>
+                </div>
+                <div class="pkg-details">
+                    <h3>Station Pickup Service</h3>
+                    <p class="pkg-description">
+                        Arrive in Nuwara Eliya stress-free. Our driver will greet you at the <strong>Nanu Oya or Ambewela Railway Station</strong> platform holding a name board. We handle your luggage and drive you directly to your hotel or guesthouse in comfort.
+                    </p>
+                    <ul class="pkg-features">
+                        <li><i class="fas fa-check"></i> Luggage Assistance</li>
+                        <li><i class="fas fa-check"></i> AC Van or Car</li>
+                        <li><i class="fas fa-check"></i> Fixed Price (No haggling)</li>
+                    </ul>
+                    <div class="pkg-footer">
+                        <div class="price">From LKR 5,000</div>
+                        <button class="select-btn" onclick="selectPackage('Station Transfer', 'pkg-station')">Select This</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pkg-card" id="pkg-tea">
+                <div class="pkg-image">
+                    <img src="../images/damro.jpg" alt="Tea Estate">
+                </div>
+                <div class="pkg-details">
+                    <h3>Tea & Nature Experience</h3>
+                    <p class="pkg-description">
+                        Immerse yourself in the "Little England" of Sri Lanka. This half-day tour takes you through emerald green tea estates. You will visit the famous <strong>Damro Tea Factory</strong> for a tasting session, stop at the majestic <strong>Ramboda Falls</strong>, and enjoy a scenic drive around Gregory Lake.
+                    </p>
+                    <ul class="pkg-features">
+                        <li><i class="fas fa-check"></i> Factory Entrance Included</li>
+                        <li><i class="fas fa-check"></i> Tea Tasting</li>
+                        <li><i class="fas fa-check"></i> 4-5 Hours Duration</li>
+                    </ul>
+                    <div class="pkg-footer">
+                        <div class="price">From LKR 8,000</div>
+                        <button class="select-btn" onclick="selectPackage('Tea Tour', 'pkg-tea')">Select This</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pkg-card" id="pkg-safari">
+                <div class="pkg-image">
+                    <img src="../images/plains.webp" alt="Horton Plains">
+                </div>
+                <div class="pkg-details">
+                    <h3>Horton Plains Safari</h3>
+                    <p class="pkg-description">
+                        An early morning adventure for nature lovers. We pick you up at 5:00 AM in a rugged 4x4 Jeep to reach <strong>Horton Plains National Park</strong>. Hike to World's End precipice and Baker's Falls before the mist sets in. A truly breathtaking experience.
+                    </p>
+                    <ul class="pkg-features">
+                        <li><i class="fas fa-check"></i> 4x4 Jeep Transport</li>
+                        <li><i class="fas fa-check"></i> Early Morning Start</li>
+                        <li><i class="fas fa-check"></i> Entrance Ticket Assistance</li>
+                    </ul>
+                    <div class="pkg-footer">
+                        <div class="price">From LKR 12,000</div>
+                        <button class="select-btn" onclick="selectPackage('Highland Safari', 'pkg-safari')">Select This</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pkg-card" id="pkg-airport">
+                <div class="pkg-image">
+                    <img src="../images/airport.jpg" alt="Airport Road">
+                </div>
+                <div class="pkg-details">
+                    <h3>Airport Transfer (BIA)</h3>
+                    <p class="pkg-description">
+                        Direct private transfer between Nuwara Eliya and Colombo Bandaranaike International Airport (BIA). Enjoy a comfortable 5-6 hour journey through the highlands with a safe, experienced driver.
+                    </p>
+                    <ul class="pkg-features">
+                        <li><i class="fas fa-check"></i> Highway Fees Included</li>
+                        <li><i class="fas fa-check"></i> 24/7 Availability</li>
+                    </ul>
+                    <div class="pkg-footer">
+                        <div class="price">From LKR 25,000</div>
+                        <button class="select-btn" onclick="selectPackage('Airport Transfer', 'pkg-airport')">Select This</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-wrapper">
+            <div class="booking-form-box">
+                <h3 style="color: var(--primary-green); margin-bottom: 1rem;">Complete Booking</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: #666;">Fill details below or select a package on the left.</p>
+                
+                <form id="bookingForm" onsubmit="handleBooking(event)">
+                    <div class="selected-pkg-display" id="displaySelection">
+                        No package selected yet.<br>
+                        <small>(Choose from list or fill Custom below)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Service Type</label>
+                        <select id="serviceType" class="form-select">
+                            <option value="Custom" disabled selected>-- Select Service --</option>
+                            <option value="Station Transfer">Station Pickup</option>
+                            <option value="Tea Tour">Tea & Nature Tour</option>
+                            <option value="Highland Safari">Horton Plains Safari</option>
+                            <option value="Airport Transfer">Airport Transfer</option>
+                            <option value="Custom Trip">Other / Custom Trip</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pickup Date & Time</label>
+                        <input type="datetime-local" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pickup Location</label>
+                        <input type="text" id="pickupLoc" class="form-input" placeholder="e.g. Nanu Oya Station">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Vehicle Preference</label>
+                        <select id="vehicleType" class="form-select">
+                            <option value="Car">Car (3 Pax)</option>
+                            <option value="Van">Van (7 Pax)</option>
+                            <option value="Bus">Mini Bus (15+ Pax)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>WhatsApp Number</label>
+                        <input type="tel" class="form-input" placeholder="+94 7..." required>
+                    </div>
+
+                    <button type="submit" class="cta-button" style="width: 100%; margin-top: 1rem;">Send Inquiry</button>
+                    <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem; color: #888;">No payment required now. We will confirm availability via WhatsApp.</p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section"><h3>Misty Mount Travels</h3><p>Safe, Reliable, Local.</p></div>
+            <div class="footer-section"><h3>Contact</h3><p>info@mistymounttravels.lk</p></div>
+        </div>
+        <div class="copyright"><p>© 2026 Misty Mount Travels.</p></div>
+    </footer>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/booking.js"></script>
+</body>
+</html>
